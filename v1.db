@@ -1,0 +1,32 @@
+Table Etudiants {
+  id_etudiants int [primary key]
+  nb_immatriculation integer unique
+  nom varchar
+  prenom varchar
+  email varchar
+  natel varchar
+}
+
+Table Professeurs {
+  id_professeurs int [primary key]
+  nom varchar 
+  prenom varchar
+  bureau varchar 
+  email varchar
+}
+
+Table Cours {
+  id_cours int [primary key]
+  nom varchar 
+  id_professeurs int 
+}
+
+Ref: Professeurs.id_professeurs < Cours.id_professeurs
+
+Table Inscription {
+  id_cours int 
+  id_etudiants int 
+}
+
+Ref: Cours.id_cours < Inscription.id_cours
+Ref: Etudiants.id_etudiants < Inscription.id_etudiants
