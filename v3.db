@@ -19,6 +19,7 @@ Table Cours {
   id_cours int [primary key]
   nom varchar 
   id_professeurs int 
+  id_assistants int
 }
 
 Ref: Professeurs.id_professeurs < Cours.id_professeurs
@@ -28,7 +29,7 @@ Table Inscriptions {
   id_etudiants int 
 }
 
-Ref: Cours.id_cours > Inscriptions.id_cours
+Ref: Cours.id_cours < Inscriptions.id_cours
 Ref: Etudiants.id_etudiants < Inscriptions.id_etudiants
 
 Table Evaluations {
@@ -46,9 +47,8 @@ Ref: Inscriptions.id_cours < Evaluations.id_cours
 Table Assistants {
   id_assistants int [primary key]
   id_etudiants int 
-  id_cours int 
   numero_bureau integer 
 }
 
 Ref: Etudiants.id_etudiants > Assistants.id_etudiants
-Ref: Cours.id_cours < Assistants.id_cours
+Ref: Assistants.id_assistants < Cours.id_assistants
