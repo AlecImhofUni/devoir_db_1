@@ -28,5 +28,5 @@ Table Inscriptions {
   id_etudiants int 
 }
 
-Ref: Cours.id_cours > Inscriptions.id_cours
+Ref: Cours.id_cours < Inscriptions.id_cours
 Ref: Etudiants.id_etudiants < Inscriptions.id_etudiants
