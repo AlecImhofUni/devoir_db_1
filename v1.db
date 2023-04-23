@@ -1,6 +1,6 @@
 Table Etudiants {
   id_etudiants int [primary key]
-  nb_immatriculation integer unique
+  nb_immatriculation int
   nom varchar
   prenom varchar
   email varchar
@@ -28,5 +28,5 @@ Table Inscriptions {
   id_etudiants int 
 }
 
-Ref: Cours.id_cours < Inscriptions.id_cours
+Ref: Cours.id_cours > Inscriptions.id_cours
 Ref: Etudiants.id_etudiants < Inscriptions.id_etudiants
