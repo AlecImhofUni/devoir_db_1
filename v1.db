@@ -23,10 +23,10 @@ Table Cours {
 
 Ref: Professeurs.id_professeurs < Cours.id_professeurs
 
-Table Inscription {
+Table Inscriptions {
   id_cours int 
   id_etudiants int 
 }
 
-Ref: Cours.id_cours < Inscription.id_cours
-Ref: Etudiants.id_etudiants < Inscription.id_etudiants
+Ref: Cours.id_cours < Inscriptions.id_cours
+Ref: Etudiants.id_etudiants < Inscriptions.id_etudiants
